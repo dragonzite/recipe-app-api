@@ -173,7 +173,6 @@ class PrivateRecipeApiTests(TestCase):
         self.assertEqual(len(tags), 1)
         self.assertIn(new_tag, tags)
 
-
     def test_full_update_recipe(self):
         """Test updating a recipe with put"""
         recipe = sample_recipe(user=self.user)
@@ -181,8 +180,8 @@ class PrivateRecipeApiTests(TestCase):
 
         payload = {
             'title': 'Spaghetti carbonara',
-                    'time_minutes': 25,
-                    'price': 5.00
+                     'time_minutes': 25,
+                     'price': 5.00
         }
         url = detail_url(recipe.id)
         self.client.put(url, payload)
